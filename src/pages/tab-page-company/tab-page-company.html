@@ -14,28 +14,7 @@
 <ion-content padding>
   <ion-searchbar (ionInput)="onSearch($event)" placeholder="搜索"></ion-searchbar>
   <ion-list>
-    <!--<ion-list-header>-->
-    <!--Header-->
-    <!--</ion-list-header>-->
-
-    <!--<ion-item detail-push>-->
-    <!--detail-push-->
-    <!--</ion-item>-->
-
-    <!--<ion-item-divider>-->
-    <!--ion-item-divider-->
-    <!--</ion-item-divider>-->
-
-    <!--<ion-item>-->
-    <!--<ion-label>label</ion-label>-->
-    <!--<div item-content>item-content</div>-->
-    <!--</ion-item>-->
-
     <ion-item *ngFor="let companyInfo of companyInfoes" (click)="onItemSelected(companyInfo)">
-
-      <!--<p>{{companyInfo.serverUrl}}</p>-->
-
-
       <div> {{companyInfo.companyNo}}
         <span item-right>{{companyInfo.companyName}}</span>
       </div>
