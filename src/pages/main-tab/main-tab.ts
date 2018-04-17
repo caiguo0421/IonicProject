@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import {Component, ViewChild} from '@angular/core';
+import {IonicPage, NavController, Platform, Tabs} from 'ionic-angular';
+import {BackButtonService} from "../../services/backButton.service";
+import {TabPageCompanyPage} from "../tab-page-company/tab-page-company";
+import {TabPageVersionInfoPage} from "../tab-page-version-info/tab-page-version-info";
+import {TabPageAboutPage} from "../tab-page-about/tab-page-about";
 
 /**
  * Generated class for the MainTabPage tabs.
@@ -15,12 +19,43 @@ import { IonicPage, NavController } from 'ionic-angular';
 })
 export class MainTabPage {
 
+  tabRoots: Object[];
+  @ViewChild('myTabs') tabRef: Tabs;
+
+
   tabPageHomeRoot = 'TabPageHomePage'
   tabPageCompanyRoot = 'TabPageCompanyPage'
   tabPageVersionInfoRoot = 'TabPageVersionInfoPage'
   tabPageAboutRoot = 'TabPageAboutPage'
 
+  // <ion-tab [root]="tabPageCompanyRoot" tabTitle="租户信息" tabIcon="ios-home"></ion-tab>
+  // <ion-tab [root]="tabPageVersionInfoRoot" tabTitle="版本信息" tabIcon="information-circle"></ion-tab>
+  // <ion-tab [root]="tabPageAboutRoot" tabTitle="设置" tabIcon="person"></ion-tab>
+  constructor(public navCtrl: NavController, public backButtonService: BackButtonService,
+              private platform: Platform) {
 
-  constructor(public navCtrl: NavController) {}
+    this.tabRoots = [
+      {
+        root: TabPageCompanyPage,
+        tabTitle: '租户信息',
+        tabIcon: 'home'
+      },
+      {
+        root: TabPageVersionInfoPage,
+        tabTitle: '版本信息',
+        tabIcon: 'information-circle'
+      },
+      {
+        root: TabPageAboutPage,
+        tabTitle: '设置',
+        tabIcon: 'person'
+      }
+    ];
+
+    this.platform.ready().then(() => {
+      this.backButtonService.registerBackButtonAction(this.tabRef);
+    });
+  }
+
 
 }

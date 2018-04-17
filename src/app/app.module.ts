@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import {LoginPage} from "../pages/login/login";
 import {MainTabPage} from "../pages/main-tab/main-tab";
 import {CompanyInfoDetailPage} from "../pages/company-info-detail/company-info-detail";
+import {BackButtonService} from "../services/backButton.service";
 
 @NgModule({
   declarations: [
@@ -30,11 +31,13 @@ import {CompanyInfoDetailPage} from "../pages/company-info-detail/company-info-d
     LoginPage,
     MainTabPage,
     CompanyInfoDetailPage
+
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    BackButtonService
   ]
 })
 export class AppModule {}

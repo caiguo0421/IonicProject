@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {AlertController, IonicModule, NavController, NavParams} from 'ionic-angular';
+import {AlertController, IonicModule, NavController, NavParams, Platform} from 'ionic-angular';
 import { User } from '../../User';
 import {BrowserModule} from "@angular/platform-browser";
 import {MyApp} from "../../app/app.component";
 import {MainTabPage} from "../main-tab/main-tab";
+import {BackButtonService} from "../../services/backButton.service";
 
 /**
  * Generated class for the LoginPage page.
@@ -21,7 +22,12 @@ export class LoginPage {
 
   user :User = new User();
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController,private backButtonService: BackButtonService,
+  private platform: Platform) {
+
+    this.platform.ready().then(() => {
+      this.backButtonService.registerBackButtonAction(null);
+    });
   }
 
   ionViewDidLoad() {
