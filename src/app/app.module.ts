@@ -8,13 +8,15 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {LoginPage} from "../pages/login/login";
 import {MainTabPage} from "../pages/main-tab/main-tab";
+import {CompanyInfoDetailPage} from "../pages/company-info-detail/company-info-detail";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage,
-    MainTabPage
+    MainTabPage,
+    CompanyInfoDetailPage
   ],
   imports: [
     FormsModule,
@@ -26,7 +28,8 @@ import {MainTabPage} from "../pages/main-tab/main-tab";
     MyApp,
     HomePage,
     LoginPage,
-    MainTabPage
+    MainTabPage,
+    CompanyInfoDetailPage
   ],
   providers: [
     StatusBar,

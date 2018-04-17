@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>公司信息明细</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <h3 text-center *ngIf="selectedItem">
+   {{selectedItem.companyName}}({{selectedItem.companyNo}})
+  </h3>
+  <h4 text-center *ngIf="selectedItem">
+    {{selectedItem.serverUrl}}
+  </h4>
+</ion-content>
