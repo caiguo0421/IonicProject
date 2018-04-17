@@ -6,23 +6,22 @@
 -->
 
 
-
 <ion-content padding>
   <ion-list>
     <ion-item>
       <ion-label fiexd>用户名</ion-label>
-      <ion-input type="text"  [(ngModel)] = "user.userName" placeholder="请输入用户名"></ion-input>
+      <ion-input type="text" [(ngModel)]="user.userName" placeholder="请输入用户名"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label fiexd>密码</ion-label>
-      <ion-input type="password" [(ngModel)] = "user.password" placeholder="&nbsp;&nbsp;&nbsp;请输入密码" ></ion-input>
+      <ion-input type="password" [(ngModel)]="user.password" placeholder="&nbsp;&nbsp;&nbsp;请输入密码"></ion-input>
     </ion-item>
   </ion-list>
 
-  <div padding>
-    <button ion-button  color = "primary"   icon-start full (click)="onClick()" >
-      <ion-icon name = "home"></ion-icon>
+
+  <div style="text-align: center; margin-left: 30px; margin-right: 30px;margin-top: 30px;">
+    <button ion-button block (click)="onClick()">
       登录
     </button>
   </div>

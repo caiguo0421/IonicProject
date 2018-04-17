@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
+import {LoginPage} from "../login/login";
 
 /**
  * Generated class for the TabPageAboutPage page.
@@ -15,11 +16,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TabPageAboutPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,public modalCtrl: ModalController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TabPageAboutPage');
+  }
+
+  logOut(){
+    let modal = this.modalCtrl.create(LoginPage);
+    modal.present();
   }
 
 }

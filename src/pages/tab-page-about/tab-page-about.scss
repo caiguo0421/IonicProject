@@ -1,3 +1,22 @@
-page-tab-page-about {
 
+page-tab-page-about {
+  .toolbar-title-md{
+    text-align: center;
+  }
+
+  .scroll-content{
+    overflow: hidden;
+  }
+
+  .bg-color{
+    background-color: #efeeee;
+  }
+
+  .top-list{
+    margin-top: 15px;
+  }
+  .icon {
+    font-size: 175%;
+    color:#387ef5;
+  }
 }

@@ -15,26 +15,31 @@
   <ion-searchbar (ionInput)="onSearch($event)" placeholder="搜索"></ion-searchbar>
   <ion-list>
     <!--<ion-list-header>-->
-      <!--Header-->
+    <!--Header-->
     <!--</ion-list-header>-->
 
     <!--<ion-item detail-push>-->
-      <!--detail-push-->
+    <!--detail-push-->
     <!--</ion-item>-->
 
     <!--<ion-item-divider>-->
-      <!--ion-item-divider-->
+    <!--ion-item-divider-->
     <!--</ion-item-divider>-->
 
     <!--<ion-item>-->
-      <!--<ion-label>label</ion-label>-->
-      <!--<div item-content>item-content</div>-->
+    <!--<ion-label>label</ion-label>-->
+    <!--<div item-content>item-content</div>-->
     <!--</ion-item>-->
 
     <ion-item *ngFor="let companyInfo of companyInfoes" (click)="onItemSelected(companyInfo)">
-      <h2 align="left">{{companyInfo.companyNo}}</h2>
-      <h3>{{companyInfo.companyName}}</h3>
-      <a>{{companyInfo.serverUrl}}</a>
+
+      <!--<p>{{companyInfo.serverUrl}}</p>-->
+
+
+      <div> {{companyInfo.companyNo}}
+        <span item-right>{{companyInfo.companyName}}</span>
+      </div>
+      <p>{{companyInfo.serverUrl}}</p>
     </ion-item>
   </ion-list>
 </ion-content>
