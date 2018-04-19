@@ -28,9 +28,6 @@ export class MainTabPage {
   tabPageVersionInfoRoot = 'TabPageVersionInfoPage'
   tabPageAboutRoot = 'TabPageAboutPage'
 
-  // <ion-tab [root]="tabPageCompanyRoot" tabTitle="租户信息" tabIcon="ios-home"></ion-tab>
-  // <ion-tab [root]="tabPageVersionInfoRoot" tabTitle="版本信息" tabIcon="information-circle"></ion-tab>
-  // <ion-tab [root]="tabPageAboutRoot" tabTitle="设置" tabIcon="person"></ion-tab>
   constructor(public navCtrl: NavController, public backButtonService: BackButtonService,
               private platform: Platform) {
 

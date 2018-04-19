@@ -26,4 +26,12 @@ export class CompanyInfoDetailPage {
     console.log('ionViewDidLoad CompanyInfoDetailPage');
   }
 
+
+  onSave(){
+
+  }
+
+  onCancel(){
+    this.navCtrl.pop();
+  }
 }
